@@ -95,15 +95,10 @@ ul{
 	justify-content: center;
 	padding: 0 30px;
 
-	@media (max-width: 1024px){
+	@media (max-width: 1280px){
 		padding: 0 20px;
 	}
 }
-
-
-
-
-
 
 .section__inner{
 	width: 100%;
@@ -111,11 +106,51 @@ ul{
 }
 
 
+.page-content{
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main{
+	flex-grow: 1;
+}
+
+
+.beldozer-hover{
+    &:hover{
+        color: $beldozer100 !important;
+    }
+}
+
+.sany-hover{
+    &:hover{
+        color: $sany100 !important;
+    }
+}
+
+.mammut-hover{
+    &:hover{
+        color: $mammut100 !important;
+    }
+}
+
+
+.socma-hover{
+    &:hover{
+        color: $socma100 !important;
+    }
+}
+
+
+
 @import 'vars';
 
 
 @import 'units/hamburger/hamburger';
 @import 'units/header/header';
+@import 'units/footer/footer';
 @import 'units/mob-menu/mob-menu';
 @import 'units/easyModal/easyModal';
 @import 'units/modals/modals';

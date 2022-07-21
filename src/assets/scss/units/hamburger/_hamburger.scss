@@ -1,24 +1,31 @@
 .hamburger{
-
-
-    width: 28px;
-    height: 24px;
+    width: 64px;
+    height: 64px;
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+    justify-content: center;
+    align-items: center;    
+    border: 1px solid rgba(231, 228, 226, 0.2);
+    border-radius: 2px;
+    margin-left: 16px;
 
-
-
-    div{
-        width: 100%;
-        height: 3px;
-        background-color: #fff;
+    path{
+        transition: 300ms;
 
     }
 
+    cursor: pointer;
 
-    @media (max-width: 1024px){
+    &:hover{
+        path{
+            fill: $beldozer100;
+        }
+    }
+    @media (max-width: 1280px){
         display: flex;
+    }
+
+    @media (max-width: 350px){
+        width: 48px;
+        height: 48px;
     }
 }

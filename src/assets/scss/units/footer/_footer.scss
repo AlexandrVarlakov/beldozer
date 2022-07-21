@@ -1,0 +1,136 @@
+.footer{
+    background-color: $black80;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 56px 30px;
+
+    @media (max-width: 1280px){
+        padding: 56px 20px;
+    }
+}
+
+.footer__inner{
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+}
+
+.f-nav{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 3fr 3fr 6fr;
+
+    @media (max-width: 1024px){
+
+    }
+    grid-gap: 40px 24px;
+
+    @media (max-width: 1024px){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 480px){
+        grid-template-columns: 1fr;
+    }
+}
+
+.f-about-company{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @media (max-width: 1024px){
+        padding-top: 20px;
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+    
+}
+
+.f-about-company__inner{
+    max-width: 420px;
+    width: 100%;
+
+    padding: 24px 0 24px 16px;
+    border-left: $beldozer100 8px solid;
+}
+
+.f-nav__title-col{    
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.2857;
+
+
+    letter-spacing: 0.1em;
+    color: $white80;
+
+    margin-bottom: 24px;
+
+    @media (max-width: 1024px){
+        font-size: 13px;
+    }
+}
+
+
+.f-nav__menu{
+    li{
+        &:not(:first-of-type){
+            margin-top: 16px;
+        }
+    }
+
+    a{
+        font-weight: 800;
+        font-size: 21px;
+        color: $white100;
+        transition: 300ms;
+        @media (max-width: 1024px){
+            font-size: 20px;
+        }
+        &:hover{
+            color: $beldozer100;
+        }
+
+        white-space: pre-line;
+
+
+        
+    }
+}
+
+.f-about-company__company-name{
+    font-weight: 800;
+    font-size: 21px;
+    color: $white100;
+    white-space: pre-line;
+    margin-bottom: 24px;
+
+    @media (max-width: 1024px){
+        font-size: 20px;
+    }
+}
+.f-about-company__upn{
+    
+    font-weight: 500;
+    font-size: 18px;
+    color: $white100;
+    margin-bottom: 16px;
+
+    @media (max-width: 1024px){
+        font-size: 17px;
+    }
+}        
+
+.f-about-company__copyright{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.26;
+    color: $white80;
+    white-space: pre-line;
+
+    @media (max-width: 1024px){
+        font-size: 14px;
+    }
+}
