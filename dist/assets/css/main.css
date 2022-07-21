@@ -1379,7 +1379,9 @@ main {
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
-    min-height: 240px; }
+    min-height: 240px;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 6% 100%, 0 89%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 6% 100%, 0 89%, 0 0); }
 
 .i-swiper-slide__text-content {
   padding: 40px; }
