@@ -1,0 +1,125 @@
+@import 'fonts-include/mulish';
+@import 'fonts-include/oswald';
+
+:root {
+	--black100: #35363D;
+	--black80: #54555F;
+	--white100: #FBFAF9;
+	--white80: #E7E4E2;
+	--beldozer100: #F9A038;
+	--beldozer80: #FFB35A;
+	--beldozerLin: linear-gradient(92.42deg, #F9A038 51.03%, #FA9724 51.04%);;
+	--gray100: #F5F3F1;
+	--sany100: #EA0000;
+	--sany80: #FF5050;;
+	--sanyLin: linear-gradient(92.42deg, #EA0000 51.03%, #D90101 51.04%);;
+	--mammut100:  #FFD504;
+	--mammut80: #FFDD34;;
+	--mammutLin: linear-gradient(92.42deg, #FFD504 51.03%, #FAD000 51.04%);;
+	--socma100: #00146C;
+	--socma80: #01439B;
+	--socmaLin: linear-gradient(92.42deg, #001368 51.03%, #001055 51.04%);
+}
+
+$black100: var(--black100);
+$black80: var(--black80);
+$white100: var(--white100);
+$white80: var(--white80);
+$beldozer100: var(--beldozer100);
+$beldozer80: var(--beldozer80);
+$beldozerLin: var(--beldozerLin);
+$gray100: var(--gray100);
+$sany100: var(--sany100);
+$sany80: var(--sany80);
+$sanyLin: var(--sanyLin);
+$mammut100: var(--mammut100);
+$mammut80: var(--mammut80);
+$mammutLin: var(--mammutLin);
+$socma100: var(--socma100);
+$socma80: var(--socma80);
+$socmaLin: var(--sanyLin);
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+html{
+	scroll-behavior: smooth;
+	font-family: 'Mulish';
+}
+
+
+body{
+	background-color: $white100;
+}
+
+
+a{
+	text-decoration: none;
+	outline: none;
+}
+
+button{
+	font-family: inherit;
+	border: none;
+	background: transparent;
+	outline: none;
+	cursor: pointer;
+}
+
+input, textarea{
+	font-family: inherit;
+	border: none;
+	background: #fff;
+	outline: none;
+}
+
+address{
+	font-style: normal;
+}
+
+ul{
+	list-style: none;
+}
+
+
+.section{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 0 30px;
+
+	@media (max-width: 1024px){
+		padding: 0 20px;
+	}
+}
+
+
+
+
+
+
+.section__inner{
+	width: 100%;
+	max-width: 1300px;
+}
+
+
+@import 'vars';
+
+
+@import 'units/hamburger/hamburger';
+@import 'units/header/header';
+@import 'units/mob-menu/mob-menu';
+@import 'units/easyModal/easyModal';
+@import 'units/modals/modals';
+@import 'units/swiper/swiper';
+@import 'units/sliders/sliders';
+
+

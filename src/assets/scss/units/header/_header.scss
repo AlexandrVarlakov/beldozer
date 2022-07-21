@@ -1,0 +1,22 @@
+.header{
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+
+    background-color: black;
+
+
+    @media (max-width: 1024px){
+        padding: 0 20px;
+    }
+}
+
+.header__inner{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+
+    
+}
