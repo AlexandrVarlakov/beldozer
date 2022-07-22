@@ -35,6 +35,70 @@
     }
 }
 
+.i-swiper-slide{
+
+    height: auto !important;
+    .btn{
+        color: #35363D;
+	    background: $beldozerLin;
+        background-position: 50% 50%;
+        background-size: 200% 100%;
+        &:hover{
+            background-position: 0% 100% !important;
+        }
+    }   
+}
+
+.i-swiper-slide.sany-slide{
+    .btn{
+        background: $sanyLin;
+        color: $white100;
+        background-position: 50% 50%;
+        background-size: 200% 100%;
+        &:hover{
+            background-position: 0% 100% !important;
+        }
+    }
+    
+}
+
+.i-swiper-slide.mammut-slide{
+    .btn{
+        background: $mammutLin;
+        color: $black100;
+        background-position: 50% 50%;
+        background-size: 200% 100%;
+        &:hover{
+            background-position: 0% 100% !important;
+        }
+    }
+    
+}
+.i-swiper-slide.mammut-slide{
+    .btn{
+        background: $mammutLin;
+        color: $black100;
+        background-position: 50% 50%;
+        background-size: 200% 100%;
+        &:hover{
+            background-position: 0% 100% !important;
+        }
+    }
+    
+}
+
+.i-swiper-slide.socma-slide{
+    .btn{
+        background: $socmaLin;
+        color: $white100;
+        background-position: 50% 50%;
+        background-size: 200% 100%;
+        &:hover{
+            background-position: 0% 100% !important;
+        }
+    }
+    
+}
 
 
 .i-swiper-slide{
@@ -75,6 +139,8 @@
     
     @media (max-width: 768px){
         padding-bottom: 0;
+
+        
     }
 }
 
@@ -95,7 +161,7 @@
     top: 0;
     @media (max-width: 768px){
         position: static;   
-        height: auto;
+        height: 100%;
     }
 }
 
@@ -114,7 +180,11 @@
 
 .i-swiper-slide__brand-logo{
     margin-top: 16px;
+    display: inline-block;
     max-width: 66%;
+    img{
+        max-width: 100%;
+    }
 }
 .i-slide-img{
     width: 100%;
@@ -144,6 +214,11 @@
 
     @media (max-width: 768px){
         padding: 0;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        
     }
 }
 
@@ -179,6 +254,11 @@
 
     @media (max-width: 768px){
         padding: 0 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
     }
     
 }

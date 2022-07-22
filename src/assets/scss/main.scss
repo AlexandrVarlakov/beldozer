@@ -37,7 +37,11 @@ $mammut80: var(--mammut80);
 $mammutLin: var(--mammutLin);
 $socma100: var(--socma100);
 $socma80: var(--socma80);
-$socmaLin: var(--sanyLin);
+$socmaLin: var(--socmaLin);
+
+@import 'vars';
+
+
 
 
 
@@ -51,6 +55,7 @@ $socmaLin: var(--sanyLin);
 
 html{
 	scroll-behavior: smooth;
+	
 	font-family: 'Mulish';
 }
 
@@ -180,6 +185,48 @@ main{
 	}
 }
 
+
+
+.h2{
+	font-family: 'Oswald';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 135%;
+	color: #35363D;
+	white-space: pre-line;
+
+	@media (max-width: 1024px){
+		font-size: 32px;
+
+		line-height: 1.25;
+	}
+
+	@media (max-width: 350px){
+		font-size: 28px;
+	}
+}
+
+
+.h4{	
+	font-weight: 800;
+	font-size: 21px;
+	line-height: 1.238;
+
+	/* Black100 */
+	color: #35363D;
+	white-space: pre-line;
+}
+
+
+.link-md{
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.25;
+	color: $black80;
+	transition: 300ms;
+}
+
 .text-md{
 	
 	font-weight: 500;
@@ -192,6 +239,25 @@ main{
 	}
 	
 }
+
+.text{
+
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 135%;
+	color: #54555F;
+}
+
+.text-sm{
+	
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 135%;
+	color: #54555F;
+
+
+}
+
 .beldozer-btn{
 	
 	
@@ -233,10 +299,10 @@ main{
 	background-position: 50% 50%;
 	text-align: center;
 	transition: 300ms;
-
+	border-radius: 2px;
 
 	&:hover{
-		background-position: 0% 100%;
+		background-position: 0% 100% !important;
 	}
 
 	@media (max-width: 420px){
@@ -256,10 +322,6 @@ main{
 	}
 }
 
-
-@import 'vars';
-
-
 @import 'units/hamburger/hamburger';
 @import 'units/header/header';
 @import 'units/footer/footer';
@@ -268,5 +330,5 @@ main{
 @import 'units/modals/modals';
 @import 'units/swiper/swiper';
 @import 'units/sliders/sliders';
-@import 'units/page/index/i-slider'
-
+@import 'units/catalog/catalog';
+@import 'units/page/index/i-slider';
