@@ -1,0 +1,40 @@
+$lg: 1281px; //large
+$md: 1025px; //middle
+$smd: 769px; // small middle
+$sm: 641px; //small
+$vsm: 481px; //very small
+
+.mb-1{
+	margin-bottom: .5rem;
+}
+
+.mb-2{
+	margin-bottom: 1rem;
+}
+
+.mb-3{
+	margin-bottom: 1.5rem;
+}
+
+@mixin createOffset($offsetName, $breakpoint-name, $breakpoint, $count, $propertyName){
+    @for $i from 0 through $count  {
+        .#{$offsetName}-#{$breakpoint-name}-#{$i}{
+            @media (min-width: $breakpoint){
+            
+                #{$propertyName}:  #{$i * 0.5}rem;
+            }
+        }
+
+        
+    }
+
+}
+
+
+
+
+@include createOffset('mb', 'vsm',  $vsm, 4, 'margin-bottom');
+@include createOffset('mb', 'sm',  $sm, 4, 'margin-bottom');
+@include createOffset('mb', 'smd',  $smd, 4, 'margin-bottom');
+@include createOffset('mb', 'md',  $md, 4, 'margin-bottom');
+@include createOffset('mb', 'lg',  $lg, 4, 'margin-bottom');

@@ -1,0 +1,39 @@
+@mixin createColumns($breakpoint-name, $breakpoint, $cols){
+    @for $i from 1 through $cols  {
+        .c-#{$breakpoint-name}-#{$i}{
+            @media (min-width: $breakpoint){
+            
+                grid-column: span $i;
+            }
+        }
+
+        
+    }
+
+}
+.g-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 24px;
+
+    @for $i from 1 through 12  {
+        .c-#{$i}{
+            grid-column: span $i;
+        }
+    }
+
+
+
+
+
+    @include createColumns('vsm', $vsm, 12);
+    @include createColumns('sm', $sm, 12);
+    @include createColumns('smd', $smd, 12);
+    @include createColumns('md', $md, 12);
+    @include createColumns('lg', $lg, 12);
+}
+
+.test-item-grid{
+    background-color: rgba($color: #999, $alpha: .3);
+    padding: 24px;
+}

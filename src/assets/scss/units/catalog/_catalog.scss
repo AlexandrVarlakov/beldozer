@@ -90,6 +90,12 @@
          height: 100%;
          background-color: $beldozer100;
          z-index: -1;
+
+         @media (max-width: 768px){
+            height: calc(100% - 6px);
+            top: 50%;
+            transform: translate(0, -50%);
+         }
     }
 
     &::after{
@@ -101,6 +107,9 @@
          height: 2px;
          background-color: $beldozer100;
          transform: translate(-50%, 0);
+         @media (max-width: 768px){
+            top: 2px;
+         }
     }
 }
 
@@ -119,7 +128,9 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
     margin-top: 40px;
-
+    @media (max-width: 1024px){
+        margin-top: 26px;
+    }
     @media (max-width: 768px){
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
@@ -140,6 +151,12 @@
     max-width: 360px;
 
     position: relative;
+
+    @media (max-width: 768px){
+        max-width: initial;
+
+        min-height: 283px;
+    }
 }
 
 
@@ -211,7 +228,7 @@
 .catalog-card__link{
     display: inline-block;
     margin-top: auto;
-    
+    font-size: 16px;
     text-decoration: underline;
     transition: 300ms;
     text-underline-offset: 3px;
