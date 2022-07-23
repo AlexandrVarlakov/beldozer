@@ -28,4 +28,30 @@
         width: 48px;
         height: 48px;
     }
+
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        background: linear-gradient(78.55deg, rgba(249, 160, 56, 0.2) 0%, rgba(249, 160, 56, 0) 51.04%);
+        border: 1px solid rgba(231, 228, 226, 0.2);
+        transition: 300ms;
+        opacity: 0;
+    }
+}
+
+.hamburger.open{
+    path{
+        fill: $beldozer100;
+    }
+
+    &::before{
+        opacity: 1;
+    }
 }

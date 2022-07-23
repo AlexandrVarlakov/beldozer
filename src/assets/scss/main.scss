@@ -69,6 +69,10 @@ a{
 	text-decoration: none;
 	outline: none;
 	transition: 300ms;
+
+	&:hover{
+		color: $beldozer100;
+	}
 }
 
 button{
@@ -492,7 +496,7 @@ main{
 
 
 .hide-scroll{
-	overflow: hidden;
+	overflow: hidden !important;
 }
 
 
@@ -526,9 +530,14 @@ main{
 @import 'units/grid/g-container';
 
 @import 'units/hamburger/hamburger';
+
 @import 'units/header/header';
+@import 'units/header/contact-menu';
+@import 'units/header/main-menu';
+@import 'units/header/hamburger-menu';
+
+
 @import 'units/footer/footer';
-@import 'units/mob-menu/mob-menu';
 @import 'units/easyModal/easyModal';
 @import 'units/modals/modals';
 @import 'units/swiper/swiper';
@@ -539,4 +548,3 @@ main{
 @import 'units/page/index/section-form';
 
 @import 'units/news/news';
-@import 'units/menu/contact-menu';

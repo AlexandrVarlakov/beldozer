@@ -81,7 +81,7 @@
     background: #FBFAF9;
     border: 1px solid #F5F3F1;
     border-radius: 2px;
-
+    height: 68px;
     &:not(:placeholder-shown){
         border: 2px solid $black80;
     }

@@ -1,102 +1,174 @@
 'use strict';
-/**
- * Передаваемые опции:
- * zIndex - z-index контейнера модального окна; Значение по умолчанию из css-класса modal-fog
- * background - фон контейнера модального окна; Значение по умолчанию из css-класса modal-fog
- * displayFog - значение display у активного контейнера; Значение по умолчанию из css-класса modal-fog
- * displayModal -  значение display у активного модального окна; Значение по умолчанию block
- * showModalAnimationName - css-класс анимации добавляемый при открытии модального окна; По умолчанию не добавляется
- * closeModalAnimationName   -  css-класс анимации добавляемый при закрытиии модального окна; По умолчанию не добавляется
- * closeClasses[] - массив с классами, которые служат селекторами для закрытия окна; по умолчанию только modal-fog
- * closeModalOnFogClick - если передается false, то модальное окно не закрывается при клике; По умолчанию работает как true
+
+/** Описание опций
+ * (number) zIndex - z-index основного контейнера (modal-fog). Значение по умолчанию z-index: 999 (Описано в css);
+ * (string) background - цвет тумана. Любое добустимое css значение цвета. Значение по умолчанию background: rgba(7, 12, 19, 0.5) (Описано в css);
+ * (string) displayModalContainer - значение css свойства display контейнера, в котором находятся модальные окна. Значение по умолчанию display: flex (задается скриптом).  Можно указать любое допустимое css значение: flex, grid, block и т.д.
+ * (string) displayModal - значение css свойства display модального окна.  Значение по умолчанию display: block(задается скриптом). Можно указать любое допустимое css значение: flex, grid, block и т.д.
+ * (array['string', 'string']) closeSelectors - список селекторов, по клику на котором, закрывается модальное окно 
+ * (boolean) closeModalOnFogClick - опция определяет будет ли закрываться модальное окно по клику на пустой области. По-умолчанию - true (задается скриптом). 
+ * (string) showModalAnimation - анимация с которой появляется модальное окно. Значения по умолчанию нет. Полный список анимаций ниже.
+ * (string) showModalDuration - продолжительность анимации при открытии модального окна. Значение по умолчанию 500ms (Описано в css); Можно указать любое допустимое css значние: 700ms, 1.5s и т.д. 
+ * (string) closeModalAnimation - анимация с которой скрывается модальное окно. Значения по умолчанию fadeOut (задается скриптом). Полный список анимаций ниже.
+ * (string) closeModalDuration - продолжительность анимации скрытия модального окна. Значение по умолчанию 500ms (Описано в css); Можно указать любое допустимое css значние: 700ms, 1.5s и т.д. 
+ * (string) showFogAnimation - анимация с которой появляется главный контейнер модального окна  - modal-fog. Значения по умолчанию нет. Полный список анимаций ниже.
+ * (string) showFogDuration - продолжительность анимации при открытии главного контейнера модального окна  - modal-fog. Значение по умолчанию 500ms (Описано в css); Можно указать любое допустимое css значние: 700ms, 1.5s и т.д. 
+ * (string) closeFogAnimation - анимация закрытия главного контейнера модального окна  - modal-fog. Значения по умолчанию fadeOut (задается скриптом). Полный список анимаций ниже.
+ * (string) closeModalDuration - продолжительность анимации скрытия главного контейнера модального окна  - modal-fog. Значение по умолчанию 500ms (Описано в css); Можно указать любое допустимое css значние: 700ms, 1.5s и т.д. 
+ * (boolean) documentCanScroll - может ли прокручиваться основная страница при открытом модальном окне. Значнеие по умолчанию false
+ * (string) closeMode : modal-first | along - опция  порядка закрытия компонентов модального окна. modal-first - Сначала закрывается модальное окно, затем туман. along - закрываются параллельно. Значение по умолчанию along
+ * Хук beforeAppendModal - вызывается до добавления модального окна в туман
+ * Хук afterShow - вызывается после показа модального окна
+ * Хук beforeClose - вызывается до закрытия модального окна
+ * Хук afterClose - вызывается после закрытия модального окна и тумана
  * 
- * showFogAnimationName - анимация появления контейнера Модального окна (modal-fog)
- * closeFogAnimationName - анимация скрытия контейнера Модального окна (modal-fog)
  * 
- * showFogAnimationDuration - продолжительность анимации появления контейнера (modal-fog) модального окна
- * closeFogAnimationDuration - продолжительность анимации скрытия контейнера (modal-fog) модального окна
+ * Список анимаций:
+ * - fadeIn 
+ * - fadeInLeft
+ * - fadeInRight
+ * - fadeInBottom
+ * - fadeInTop
+ * - showInLeft
+ * - showInRight
+ * - showInTop
+ * - showInBottom
  * 
- * showModalAnimationDuration - продолжительность анимации появления модального окна
- * closeModalAnimationDuration - продолжительность анимации скрытия модального окна
- * 
- * documentScrolled - если установлен в false,  отключается скролл документа; По умолчанию true.
- * onModalOpen - назначить функцию, которая сработает при открытии модального окна
- * onModalClose - назначить функцию, которая сработает при закрытии модального окна
- * beforeAppendModal - срабатывает до вставки модального окна в modal-fog 
+ *  - fadeOut
+ *  - fadeOutTop
+ *  - fadeOutBottom
+ *  - fadeOutLeft
+ *  - fadeOutRight
+ *  - hideToLeft
+ *  - hideToRight
+ *  - hideToTop
+ *  - hideToBottom
  */
 
 class easyModal extends EventTarget{
-    constructor (_modalClassName, _options = {}){
+    constructor (modalSelector, _options = {}){
         super();
+
+        
+
+
         let self = this;
-        this.modalSelector = _modalClassName;
+        this.modalSelector = modalSelector;
 
         this.documentYPosition = window.pageYOffset;
 
         this.options = _options;
+
+        //Проверяем стоит ли запрет на скролл колесиком
+        if  ( this.options.documentCanScroll == false ) {
+            document.body.classList.add('hide-scroll');           
+        }
         this.modalFog =  this.createFog();
-        this.modal = this.getModal(_modalClassName);
+        this.modal = this.getModal(modalSelector);
 
 
         this.modalFlag = this.createFlag();
+        this.modalContainer  = this.createModalContainer();
+
+
 
         this.modal.before( this.modalFlag );
+
+        this.closeSelectors = [];
         
-        //Проверяем есть ли закрывающие классы
-        if  ( 'closeClasses' in this.options ) {
-            this.closeClasses = this.options.closeClasses;  
-        } else{
-            this.closeClasses = [];
+        
+        
+        if ( this.options.closeModalOnFogClick !== false){
+            this.modalContainer.setAttribute('data-closing', "");
         }
-        
-        if ( 'closeModalOnFogClick' in this.options ){
-            if ( this.options.closeModalOnFogClick !== false){
-                this.closeClasses.unshift('modal-fog');
-            }
-        } else{
-            this.closeClasses.unshift('modal-fog');
+        //Проверяем указаны ли селекторы, при клике на которые будет закрываться модальное окно
+        if ( this.options.closeSelectors && this.options.closeSelectors.length ){
+            
+            this.options.closeSelectors.forEach( (closeSelector) => {
+
+                let closingNodes = this.modal.querySelectorAll(closeSelector);
+
+                if ( closingNodes ){
+                    closingNodes.forEach( closingNode => {
+                        closingNode.onclick = () => {
+                            this.closeModal();
+                        }
+
+                        
+                    } )
+                }
+
+            })  
         }
 
+        if ( 'showFogDuration' in this.options ){
+            this.modalFog.style.animationDuration = this.options.showFogDuration;
+        }
 
-        if ( 'showFogAnimationName' in this.options ){
-            this.modalFog.classList.add(this.options.showFogAnimationName);
+        if ( 'showFogAnimation' in this.options ){
+            this.modalFog.classList.add(this.options.showFogAnimation);
         } else {
             this.modalFog.classList.add('fadeIn');
         }
 
 
         
-        if ( 'showFogAnimationDuration' in this.options ){
-            this.modalFog.style.animationDuration = this.options.showFogAnimationDuration + 'ms';
+        if ( 'beforeClose' in this.options ){
+            this.beforeClose = this.options.beforeClose;
+        } else {
+            this.beforeClose  = null;
+        }
+
+        if ( 'afterClose' in this.options ){
+            this.afterClose = this.options.afterClose;
+        } else {
+            this.afterClose  = null;
         }
         
-        //Проверяем стоит ли запрет на скролл колесиком
-        if  ( this.options.documentScrolled == false ) {
-            document.body.classList.add('hide-scroll');           
-        }
+        
 
         
         if ('beforeAppendModal' in this.options){
             this.options.beforeAppendModal();
         }
+        
+        
+        this.testYOverflow();
+        this.testXOverflow();
 
 
-        this.modalFog.append(this.modal);
+        this.modalContainer.append(this.modal);
 
+        this.modalFog.append(this.modalContainer);
 
+        
+        
+    
 
         document.body.append(this.modalFog);
 
 
-        if ('onModalOpen' in this.options){
-            this.options.onModalOpen();
+        if ('afterShow' in this.options){
+            this.options.afterShow();
         }
+
+        //Добавляем обработчик на изменения ширины окна, который будет контроллировать переполнение области модальных окон
+
+        this.spyWindowResize = () => {
+            
+            
+            this.testXOverflow();
+            this.testYOverflow();
+        }
+
+
+        window.addEventListener('resize', this.spyWindowResize);
 
         
 
         this.modalFog.onclick = function(event){
 
-            if (  self.searchCloseClasses( event.target ) ){
+            if (  self.targetCanClose( event.target ) ){
 
                 self.closeModal();
               
@@ -104,15 +176,18 @@ class easyModal extends EventTarget{
 
             
         }
+        
+
+
+
 
     }
 
     //Создаем контейнер для модального окна
     createFog(){
-        let modalFog = document.createElement('div');
+        let modalFog = document.createElement('modal-fog');
         
-        modalFog.classList.add('modal-fog');
-
+        
         if ( 'background' in this.options ) {
             modalFog.style.background = this.options.background;
         } 
@@ -121,19 +196,25 @@ class easyModal extends EventTarget{
             modalFog.style.zIndex = this.options.zIndex;
         } 
 
-
-        if ( 'displayFog' in this.options ) {
-            modalFog.style.display = this.options.displayFog;
-        } else{
-            modalFog.style.display = 'flex';
-        }
-
+        modalFog.style.display = 'block';
         return modalFog;
     }
 
+    createModalContainer(){
+        let modalContainer = document.createElement('modal-container');
+
+        if ( 'displayModalContainer' in this.options ) {
+            modalContainer.style.display = this.options.displayModalContainer;
+        } else{
+            modalContainer.style.display = 'flex';
+        }
+
+        return modalContainer;
+    }
+
     //Находит модальное окно добавляет опции , возращает ссылку
-    getModal(_modalClassName){
-        let modal = document.querySelector('.'+_modalClassName);
+    getModal(modalSelector){
+        let modal = document.querySelector(modalSelector);
 
         if ( 'displayModal' in this.options ) {
             modal.style.display = this.options.displayModal;
@@ -141,86 +222,39 @@ class easyModal extends EventTarget{
             modal.style.display = 'block';
         }
 
-        if ( 'showModalAnimationName' in this.options ) {
-            modal.classList.add(this.options.showModalAnimationName);
+        if ( 'showModalAnimation' in this.options ) {
+            modal.classList.add(this.options.showModalAnimation);
         }
 
 
-        if ( 'showModalAnimationDuration' in this.options ) {
-            modal.style.animationDuration = this.options.showModalAnimationDuration + 'ms';
+        if ( 'showModalDuration' in this.options ) {
+            modal.style.animationDuration = this.options.showModalDuration;
         }
         return modal;
     }
 
     //Создаем флаг для пометки места где стояло всплывающее модальное окно в документе
     createFlag(){
-        return document.createElement('modalFlag');
+        return document.createElement('modal-flag');
     }
     //Закрывает модальное окно
     closeModal(){
-        if ('closeModalAnimationName' in this.options ){
-
-            
-            this.modalFog.addEventListener('animationend', (e) => {
-
-                
-
-                if ( e.target.classList.contains('modal-fog') ){
-                    this.closeOperations();
-                } else if ( e.target.classList.contains( this.modalSelector ) ) {
-                    
-                    if ( 'closeFogAnimationDuration' in this.options ){
-                        this.modalFog.style.animationDuration = this.options.closeFogAnimationDuration + 'ms';
-                    }
-                    if ( 'closeFogAnimationName' in this.options ){
-                        this.modalFog.classList.add(this.options.closeFogAnimationName);
-                    } else {
-                        this.modalFog.classList.add('fadeOut');
-                    }
-                        
-                }
-                    
-                
-            });
-
-            if ( 'closeModalAnimationDuration' in this.options ) {
-                this.modal.style.animationDuration = this.options.showModalAnimationDuration + 'ms';
-            }
-            this.modal.classList.add(this.options.closeModalAnimationName);
-
-            
-
-
-            
-            
-
-        } else{
-            if ( 'closeFogAnimationDuration' in this.options ){
-                this.modalFog.style.animationDuration = this.options.closeFogAnimationDuration + 'ms';
-            }
-            if ( 'closeFogAnimationName' in this.options ){
-                this.modalFog.classList.add(this.options.closeFogAnimationName);
-            } else {
-                this.modalFog.classList.add('fadeOut');
-            }
-            this.modalFog.addEventListener('animationend', (e) => {
-                this.closeOperations();
-            });
-
-
-
-            
+        if ( this.beforeClose ) {
+            this.beforeClose();
         }
 
+        switch ( this.options.closeMode ){
+            case 'modal-first':
+                this.closeModalFirst();
+            break;
+
+            case 'along': 
+                this.closeAlong();
+            break;
+
+            default: this.closeAlong();
+        }
         document.body.classList.remove('hide-scroll');
-
-        if ('onModalClose' in this.options){
-            this.options.onModalClose();
-        }
-        
-        
-        
-        
     }
     /**
      * Ряд операций при закрытиии:
@@ -234,27 +268,153 @@ class easyModal extends EventTarget{
         this.modalFog.remove();
         this.modal.removeAttribute('style');
         this.clearModalClasses(this.options);
+        window.removeEventListener('resize', this.spyWindowResize);
         this.modalFlag.after(this.modal);
         this.modalFlag.remove();
+
+        if (this.afterClose){
+            this.afterClose();
+        }
     }
     //Провереят есть ли в цели клика класс из options.closeClasses
-    searchCloseClasses(eTarget){
-        for (let i = 0; i < this.closeClasses.length; i++){
-            if ( eTarget.classList.contains(this.closeClasses[i])) return true;
+    targetCanClose( eTarget ){
+        if (eTarget.hasAttribute('data-closing')){
+            return true
         }
 
         return false;
     }
     //Очищает модальное окно от ранее добавленных классов
     clearModalClasses(){
-        if ( 'showModalAnimationName' in this.options ) {
-            this.modal.classList.remove(this.options.showModalAnimationName);
+        if ( 'showModalAnimation' in this.options ) {
+            this.modal.classList.remove(this.options.showModalAnimation);
         }
 
-        if ( 'closeModalAnimationName' in this.options ) {
-            this.modal.classList.remove(this.options.closeModalAnimationName);
+        if ( 'closeModalAnimation' in this.options ) {
+            this.modal.classList.remove(this.options.closeModalAnimation);
         }
     }
 
+    //Устанавливаем настройки анимации закрытия модального окна
+    setCloseOptionsAnimation(){
+        this.modal.style.animationPlayState = 'paused';
+        if ('closeModalDuration' in this.options ){
+            this.modal.style.animationDuration  = this.options.closeModalDuration;
+        } else{
+            this.modal.style.animationDuration = '300ms';
+        }   
+
+        if ('closeModalAnimation' in this.options ){
+            this.modal.classList.add(this.options.closeModalAnimation);    
+        } else{
+            this.modal.classList.add('fadeOut');
+        }
+
+        this.modalFog.style.animationPlayState = 'paused';
+        if ('closeFogDuration' in this.options ){
+            this.modalFog.style.animationDuration = this.options.closeFogDuration;
+        } else{
+            this.modalFog.style.animationDuration = '300ms';
+        }   
+
+        if ('closeFogAnimation' in this.options ){
+            this.modalFog.classList.add(this.options.closeFogAnimation);    
+        } else{
+            this.modalFog.classList.add('fadeOut');
+        }
+    }
+    //Запуск анимации
+    startAnimation( node ){
+        node.style.animationPlayState = 'running';
+    }
+
+    //Режим закрытия модального окна, при котором сначала исчезает окно, затем туман
+    closeModalFirst(){
+        //Устанавливаем опции анимации закрытия модального окна и тумана
+        this.setCloseOptionsAnimation();
+        this.startAnimation( this.modal );
+
+        const onModalHide = (event) =>{
+            event.stopPropagation();
+            this.startAnimation( this.modalFog );
+            this.modal.removeEventListener('animationend', onModalHide);
+        }
+
+
+        this.modal.addEventListener('animationend', onModalHide);
+
+        const onFogHide = (event) => {
+            event.stopPropagation();
+            this.modalFog.removeEventListener('animationend', onFogHide);
+            this.closeOperations();
+        }
+
+        this.modalFog.addEventListener('animationend', onFogHide);
+    }
+    //Режим закрытия модального окна, при туман и окно закрываеются одновременно
+    closeAlong(){
+        let closedObject = 0;
+        this.setCloseOptionsAnimation();
+        
+        this.startAnimation( this.modal );
+        this.startAnimation( this.modalFog );
+
+        const onHideModal = (event) =>{
+            event.stopPropagation();
+            this.modal.removeEventListener('animationend', onHideModal);
+            closedObject++;
+
+            if ( closedObject >= 2 ){ 
+                this.closeOperations();
+            }
+        }
+
+        const onHideFog = (event) => {    
+            event.stopPropagation();
+            this.modalFog.removeEventListener('animationend', onHideFog);
+            closedObject++;
+
+            if ( closedObject >= 2 ){ 
+                this.closeOperations();
+            }
+        }         
+        this.modal.addEventListener('animationend', onHideModal)
+        this.modalFog.addEventListener('animationend', onHideFog)
+    }
+
+    testXOverflow(){
+        
+        if ( this.modal.offsetWidth >= document.documentElement.clientWidth ){
+            this.modalContainer.style.width = (this.modal.offsetWidth + 50) + 'px'; 
+        } else{
+            this.modalContainer.style.width = ''; 
+            
+        }
+
+        if ( (this.modal.offsetHeight >= document.documentElement.clientHeight ) || ( this.modal.offsetWidth >= document.documentElement.clientWidth ) ){
+            this.modalFog.style.overflow = 'auto';
+        } else {
+            this.modalFog.style.overflow = '';
+        }
+    }
+
+    testYOverflow(){
+        if ( this.modal.offsetHeight >= document.documentElement.clientHeight ){
+            this.modalContainer.style.height = (this.modal.offsetHeight + 50) + 'px'; 
+            
+            
+        } else{
+            this.modalContainer.style.height = ''; 
+            
+        }
+
+        if ( (this.modal.offsetHeight >= document.documentElement.clientHeight ) || ( this.modal.offsetWidth >= document.documentElement.clientWidth ) ){
+            this.modalFog.style.overflow = 'auto';
+        } else {
+            this.modalFog.style.overflow = '';
+        }
+    }
+
+    
     
 }
