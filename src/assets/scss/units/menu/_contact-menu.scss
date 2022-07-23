@@ -1,0 +1,136 @@
+.contact-menu{
+    background-color: $black100;
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 777;
+    padding-top: 120px;
+    min-width: 640px;
+
+    transform: translate(120%, 0%);
+    transition: 300ms;
+
+    @media (max-width: 640px){
+        min-width: initial;
+        width: 100vw;
+    }
+    a{
+
+        color: $white100;
+
+        display: block;
+        &:hover{
+            color: $beldozer100;
+            text-decoration: underline;
+        }
+    }
+}
+
+.contact-menu.open{
+    transform: translate(0%, 0%);
+}
+
+
+.contact-menu__scroll-container{
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.contact-menu__inner{
+    padding: 40px 56px 40px;
+    
+    max-width: 650px;
+
+    @media (max-width: 1280px){
+        padding: 32px;
+    }
+
+    @media (max-width: 640px){
+        padding: 32px 20px;
+    }
+}
+
+.contact-menu__header{
+    display: flex;
+    justify-content: space-between;
+
+    p, a{
+        color: $white100;
+
+    }
+
+    a{
+        @media (max-width: 640px){
+            display: none;
+        }
+    }
+}
+
+.contact-menu__line{
+    display: flex;
+    align-items: center;
+    @media (max-width: 350px){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.contact-menu__note{
+    margin-left: 8px;
+   color: rgba(231, 228, 226, 0.6);
+   line-height: 1;
+
+    @media (max-width: 350px){
+        margin-left: 0;
+        margin-top: 4px;
+    }
+
+}
+
+.cm-form{
+    display: grid;
+    grid-template-columns: 264px 264px;
+    grid-auto-rows: 68px;
+    grid-gap: 20px;
+
+    @media (max-width: 640px){
+        grid-template-columns: 1fr;
+    }
+}
+
+.cm-form__input{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FBFAF9;
+    border: 1px solid #54555F;
+    border-radius: 2px;
+    padding: 24px;
+    background-color: transparent;
+    &::placeholder{
+        color: rgba(251, 250, 249, 0.5);
+        opacity: 1;
+    }
+    @media (max-width: 1024px){
+        font-size: 14px;
+    }
+
+    &:not(:placeholder-shown){
+        border: 2px solid $white80;
+    }
+    &:focus{
+        border: 2px solid $beldozer100;
+    }
+}
+
+.contact-menu__mob-contact-link{
+    display: none;
+
+    @media (max-width: 640px){
+        display: block;
+    }
+}
+

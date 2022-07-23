@@ -16,6 +16,25 @@ $vsm: 481px; //very small
 	margin-bottom: 1.5rem;
 }
 
+.mb-4{
+	margin-bottom: 2rem;
+}
+
+.mb-5{
+	margin-bottom: 2.5rem;
+}
+
+.mb-6{
+	margin-bottom: 3rem;
+}
+.mb-7{
+	margin-bottom: 3.5rem;
+}
+.mb-8{
+	margin-bottom: 4rem;
+}
+
+
 @mixin createOffset($offsetName, $breakpoint-name, $breakpoint, $count, $propertyName){
     @for $i from 0 through $count  {
         .#{$offsetName}-#{$breakpoint-name}-#{$i}{
@@ -33,8 +52,8 @@ $vsm: 481px; //very small
 
 
 
-@include createOffset('mb', 'vsm',  $vsm, 4, 'margin-bottom');
-@include createOffset('mb', 'sm',  $sm, 4, 'margin-bottom');
-@include createOffset('mb', 'smd',  $smd, 4, 'margin-bottom');
-@include createOffset('mb', 'md',  $md, 4, 'margin-bottom');
-@include createOffset('mb', 'lg',  $lg, 4, 'margin-bottom');
+@include createOffset('mb', 'vsm',  $vsm, 8, 'margin-bottom');
+@include createOffset('mb', 'sm',  $sm, 8, 'margin-bottom');
+@include createOffset('mb', 'smd',  $smd, 8, 'margin-bottom');
+@include createOffset('mb', 'md',  $md, 8, 'margin-bottom');
+@include createOffset('mb', 'lg',  $lg, 8, 'margin-bottom');
