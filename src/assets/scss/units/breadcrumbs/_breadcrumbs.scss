@@ -1,0 +1,37 @@
+.breadcrumbs{
+    padding: 80px 30px 32px;
+    @media (max-width: 1280px){
+    
+      padding: 40px 20px 32px;
+    }
+    a{
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 135%;
+        color: #54555F;
+        transition: 300ms;
+        span{
+                
+            color:  #54555F !important;
+        }
+        &:hover{
+            color: $beldozer100;
+            
+
+            
+        }
+        @media (max-width: 1024px){
+            font-size: 13px;
+        }
+
+        &:last-of-type{
+            span{
+                display: none;
+            }
+
+            &:hover{
+                color:  #54555F;
+            }
+        }
+    }
+}
