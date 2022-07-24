@@ -341,6 +341,7 @@ main{
 		 content: "";
 		 position: absolute;
 		 bottom: -16px;
+		 transform: translate(60px, 0);
 		 right: 0;
 		 width: 100vw;
 		 height: 1px;
@@ -723,6 +724,28 @@ main{
 	display: block;
 }
 
+.brand{
+	color: $beldozer100;
+}
+
+.sany{
+	.brand{
+		color: $sany100;
+	}
+}
+
+.mammut{
+	.brand{
+		color: $mammut100;
+	}
+}
+
+.socma{
+	.brand{
+		color: $socma100;
+	}
+}
+
 @import 'units/grid/g-container';
 
 @import 'units/hamburger/hamburger';
@@ -748,6 +771,8 @@ main{
 @import 'units/breadcrumbs/breadcrumbs';
 
 @import 'units/page/financial-instruments/financial-instruments';
+
+@import 'units/page/category/category';
 
 @import 'units/page-pagination/page-pagination';
 @import 'units/page/contacts/contacts';

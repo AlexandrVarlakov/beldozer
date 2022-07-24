@@ -238,7 +238,9 @@
     }
 }
 
-
+a.activee{
+    color: $beldozer100;
+}
 
 
 .sany{
@@ -247,6 +249,10 @@
 			color: $sany100;
 		}
 	}
+
+    a.active{
+        color: $sany100;
+    }
 
 	.dm-links-list__item.has-child{
 		&::before{
@@ -268,7 +274,9 @@
 			color: $mammut100;
 		}
 	}
-
+    a.active{
+        color:  $mammut100;
+    }
 	.dm-links-list__item.has-child{
 		&::before{
 			background-color: $mammut100;
@@ -288,7 +296,9 @@
 			color: $socma100;
 		}
 	}
-
+    a.active{
+        color:  $socma100;
+    }
 	.dm-links-list__item.has-child{
 		&::before{
 			background-color: $socma100;
