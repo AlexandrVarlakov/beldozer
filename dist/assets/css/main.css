@@ -337,6 +337,9 @@ main {
   -webkit-transition: 300ms;
   -o-transition: 300ms;
   transition: 300ms; }
+  @media (max-width: 1024px) {
+    .link-md {
+      font-size: 15px; } }
 
 .link-bold {
   font-style: normal;
@@ -349,8 +352,13 @@ main {
   -webkit-transition: 300ms;
   -o-transition: 300ms;
   transition: 300ms; }
+  @media (max-width: 1024px) {
+    .link-bold {
+      font-size: 17px; } }
   .link-bold:hover {
-    color: var(--beldozer100); }
+    color: var(--beldozer100);
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none; }
 
 .text-md {
   font-weight: 500;
@@ -679,6 +687,11 @@ main {
   width: 100%;
   max-width: 100%;
   height: 100%; }
+
+.logotype-link {
+  display: inline-block; }
+  .logotype-link img {
+    max-width: 100%; }
 
 .g-container {
   display: grid;
@@ -3721,6 +3734,35 @@ modal-container {
       display: none; }
     .breadcrumbs a:last-of-type:hover {
       color: #54555F; }
+
+.f-company-logotype {
+  padding: 29px 42px;
+  border: 1px solid #F5F3F1;
+  border-radius: 2px;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .f-company-logotype:hover {
+    -webkit-box-shadow: 0 6px 20px 3px rgba(84, 85, 95, 0.05);
+            box-shadow: 0 6px 20px 3px rgba(84, 85, 95, 0.05); }
+  @media (max-width: 1024px) {
+    .f-company-logotype {
+      padding: 22px 33px; } }
+  .f-company-logotype img {
+    max-width: 100%;
+    mix-blend-mode: multiply; }
 
 .page-pagination {
   display: -webkit-box;

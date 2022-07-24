@@ -1,0 +1,20 @@
+.f-company-logotype{
+    padding:  29px 42px;
+    border: 1px solid #F5F3F1;
+    border-radius: 2px;
+    transition: 300ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        box-shadow: 0 6px 20px 3px rgba(84,85,95,.05);
+    }
+
+    @media (max-width: 1024px){
+        padding:  22px 33px;
+    }
+    img{
+        max-width: 100%;
+        mix-blend-mode: multiply;
+    }
+}

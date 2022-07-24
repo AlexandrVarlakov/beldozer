@@ -250,6 +250,9 @@ main{
 	line-height: 1.25;
 	color: $black80;
 	transition: 300ms;
+	@media (max-width: 1024px){
+		font-size: 15px;
+	}
 }
 
 .link-bold{
@@ -262,8 +265,13 @@ main{
 	color: #54555F;
 	transition: 300ms;
 
+	@media (max-width: 1024px){
+		font-size: 17px;
+	}
+
 	&:hover{
 		color: $beldozer100;
+		text-decoration-line: none;
 	}
 }
 
@@ -666,6 +674,13 @@ main{
 	height: 100%;
 }
 
+.logotype-link{
+	display: inline-block;
+	img{
+		max-width: 100%
+	}
+}
+
 
 @import 'units/grid/g-container';
 
@@ -690,5 +705,7 @@ main{
 @import 'units/news/news';
 
 @import 'units/breadcrumbs/breadcrumbs';
+
+@import 'units/page/financial-instruments/financial-instruments';
 
 @import 'units/page-pagination/page-pagination';
