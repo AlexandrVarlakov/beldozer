@@ -1,7 +1,7 @@
 .category-description{
     display: grid;
     grid-gap: 32px 24px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5fr 7fr;
     grid-template-rows: auto 1fr;
 
     @media (max-width: 768px){
@@ -10,8 +10,6 @@
     }
 }
 
-.category-description__brands{}
-.category-description__text{}
 .category-description__img{
     grid-column: 2 / -1;
     grid-row: 1 / -1;
@@ -21,5 +19,6 @@
     }
     img{
         max-width: 100%;
+        mix-blend-mode: multiply;
     }
 }

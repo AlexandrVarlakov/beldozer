@@ -147,7 +147,7 @@
         width: calc(100% + 0px);
         height: 2px;
         transition: 300ms;
-        background-color: $beldozer100;
+        background-color: $beldozer80;
         opacity: 0;
    }
     
@@ -174,7 +174,7 @@
     
 
     &:hover{
-        color: $beldozer100;
+        color: $beldozer80;
     }
     
 }
@@ -195,7 +195,7 @@
         margin: 12px;
 
         &:hover{
-            color: $beldozer100;
+            color: $beldozer80;
         }
     }
 
@@ -238,7 +238,7 @@
     }
 }
 
-a.activee{
+a.active{
     color: $beldozer100;
 }
 
@@ -256,15 +256,23 @@ a.activee{
 
 	.dm-links-list__item.has-child{
 		&::before{
-			background-color: $sany100;
+			background-color: $sany80;
 		}
 	}
 
 	.dm-links-list__item.open{
 		& > a{
-			color: $sany100;
+			color: $sany80;
 		}
 	}
+    
+    .dm-links-list__link:hover{
+        color: $sany80;
+    }
+
+    .dm-submenu a:hover{
+        color: $sany80;
+    }
 }
 
 
@@ -279,15 +287,23 @@ a.activee{
     }
 	.dm-links-list__item.has-child{
 		&::before{
-			background-color: $mammut100;
+			background-color: $mammut80;
 		}
 	}
 
 	.dm-links-list__item.open{
 		& > a{
-			color: $mammut100;
+			color: $mammut80;
 		}
 	}
+
+    .dm-submenu a:hover{
+        color: $mammut80;
+    }
+
+    .dm-links-list__link:hover{
+        color: $mammut80;
+    }
 }
 
 .socma{
@@ -301,13 +317,21 @@ a.activee{
     }
 	.dm-links-list__item.has-child{
 		&::before{
-			background-color: $socma100;
+			background-color: $socma80;
 		}
 	}
 
 	.dm-links-list__item.open{
 		& > a{
-			color: $socma100;
+			color: $socma80;
 		}
 	}
+
+    .dm-submenu a:hover{
+        color: $socma80;
+    }
+
+    .dm-links-list__link:hover{
+        color: $socma80;
+    }
 }
