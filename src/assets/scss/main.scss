@@ -123,6 +123,23 @@ ul{
 	min-height: 100vh;
 }
 
+.gallery-title{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 0px 30px;
+
+	@media (max-width: 1280px){
+		padding: 0px 20px;
+	}
+}
+.gallery-title__inner{
+	width: 100%;
+	max-width: 1300px;
+}
+.section-gallery{
+	display: block;
+}
 main{
 	flex-grow: 1;
 	padding-top: 120px;
@@ -777,3 +794,5 @@ main{
 @import 'units/page-pagination/page-pagination';
 @import 'units/page/contacts/contacts';
 @import 'units/page/brands/brands';
+@import 'units/page/mounted-equipment/mounted-equipment';
+

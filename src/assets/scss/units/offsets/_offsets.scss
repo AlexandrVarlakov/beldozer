@@ -98,7 +98,10 @@ $vsm: 481px; //very small
 }
 
 
-
+.p-x-0{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
 
 @include createOffset('mb', 'vsm',  $vsm, 20, 'margin-bottom');
 @include createOffset('mb', 'sm',  $sm, 20, 'margin-bottom');

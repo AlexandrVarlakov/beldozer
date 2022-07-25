@@ -34,6 +34,34 @@ let slider = new Swiper(".i-slider", {
 });
 
 
+let gallery = new Swiper(".gallery", {
+    speed: 1000,
+    autoplay: {
+        delay: 6000,
+    },
+    
+    
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    centeredSlides: true,
+    roundLengths: true,
+    loop: true,
+    loopAdditionalSlides: 30,
+    /*
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 40
+        },
+        800: {
+            slidesPerView: 'auto',
+            spaceBetween: 60
+        }
+    }*/
+})
+
+
+
 
 let showContactsBtn = document.querySelector('.show-contacts');
 let contactsMenu = document.querySelector('.contact-menu');
