@@ -407,3 +407,72 @@ phoneMasks.forEach( (input) => {
           mask: '+{375} (00) 000-00-00'
       });
 })
+
+
+let fancyTest = document.querySelectorAll('*[data-fancybox]');
+
+if ( fancyTest.length ){
+    $(function() {
+        $(".fancybox").fancybox();
+       });
+}
+
+
+let docSections = document.querySelectorAll('.doc-section');
+
+if ( docSections.length ){
+
+
+    window.addEventListener('resize', () => {
+        if ( document.body.clientWidth > 560){
+            docSections.forEach( section => {
+                section.classList.remove('open');
+                let sertList = section.querySelector('.cert-list');        
+                sertList.removeAttribute('style');
+            })
+        }
+        
+    });
+
+
+    docSections.forEach( section => {
+        let titleBlock = section.querySelector('.doc-section__title');
+        
+        let sertListInner = section.querySelector('.cert-list__inner');
+        let sertList = section.querySelector('.cert-list');
+
+        
+
+        titleBlock.onclick = function(){
+            
+
+            
+
+
+            if (document.body.clientWidth <= 560){
+                if ( !section.classList.contains('open')  ){
+
+
+                
+                    sertList.style.height = sertListInner.clientHeight + 'px';
+                    
+                
+    
+                    section.classList.add('open');
+    
+    
+                    
+                } else {
+                    section.classList.remove('open');
+                    sertList.style.height = '0px';
+                }
+            }
+
+            
+          
+           
+        }
+    } )
+    
+
+}

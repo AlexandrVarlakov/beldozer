@@ -411,6 +411,9 @@ main {
     .text-sm {
       font-size: 13px; } }
 
+.t-italic {
+  font-style: italic; }
+
 .text, .text-sm, .text-md, .h1, .h2, .h3, .h5 {
   max-width: 1080px; }
 
@@ -604,13 +607,49 @@ main {
             -ms-transform: translate(0, -50%);
                 transform: translate(0, -50%); } }
 
-.prop-media-55 {
-  width: 100%; }
-
 @media (max-width: 768px) {
   .mobile-full-width {
     width: calc(100% + 40px) !important;
     margin-left: -20px !important; } }
+
+@media (min-width: 769px) {
+  .desktop-full-height {
+    height: 100%; }
+    .desktop-full-height div {
+      padding-bottom: 0 !important;
+      height: 100% !important;
+      position: static !important; }
+    .desktop-full-height img, .desktop-full-height video, .desktop-full-height iframe {
+      position: static !important; } }
+
+.prop-media-77 {
+  width: 100%; }
+
+.prop-media-77__inner {
+  width: 100%;
+  padding-bottom: 77.77%;
+  position: relative; }
+  .prop-media-77__inner img, .prop-media-77__inner video {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center; }
+  .prop-media-77__inner iframe {
+    width: 100%;
+    height: 100%; }
+
+.prop-media-77__content {
+  position: absolute;
+  width: 100%;
+  max-width: 100%;
+  height: 100%; }
+
+.prop-media-55 {
+  width: 100%; }
 
 .prop-media-55__inner {
   width: 100%;
@@ -752,11 +791,20 @@ main {
 .sany .brand {
   color: var(--sany100); }
 
+.sany .cert__icon-layer:hover path {
+  fill: var(--sany100); }
+
 .mammut .brand {
   color: var(--mammut100); }
 
+.mammut .cert__icon-layer:hover path {
+  fill: var(--mammut100); }
+
 .socma .brand {
   color: var(--socma100); }
+
+.socma .cert__icon-layer:hover path {
+  fill: var(--socma100); }
 
 .g-container {
   display: grid;
@@ -4140,3 +4188,164 @@ modal-container {
       top: 0;
       left: 0;
       font-size: 18px; }
+
+@media (max-width: 560px) {
+  .cert-list {
+    height: 0px;
+    overflow: hidden;
+    -webkit-transition: 500ms;
+    -o-transition: 500ms;
+    transition: 500ms; } }
+
+.cert-list__inner {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  @media (max-width: 768px) {
+    .cert-list__inner {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); } }
+  @media (max-width: 560px) {
+    .cert-list__inner {
+      padding-top: 40px;
+      padding-right: 26px;
+      padding-bottom: 32px; } }
+
+.cert {
+  border: 1px solid #F5F3F1;
+  border-radius: 2px;
+  padding: 32px 32px 16px;
+  max-width: 330px;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media (max-width: 768px) {
+    .cert {
+      max-width: 480px; } }
+  .cert:hover {
+    z-index: 5;
+    -webkit-box-shadow: 0 6px 20px 3px rgba(84, 85, 95, 0.05);
+            box-shadow: 0 6px 20px 3px rgba(84, 85, 95, 0.05); }
+  .cert .text {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+.cert__icon-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+  cursor: pointer; }
+  .cert__icon-layer path {
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms; }
+  .cert__icon-layer:hover path {
+    fill: var(--beldozer100); }
+
+.cert-img {
+  width: 100%;
+  position: relative; }
+
+.cert-img__inner {
+  width: 100%;
+  padding-bottom: 141.4%;
+  position: relative; }
+  .cert-img__inner img {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center; }
+
+@media (max-width: 560px) {
+  .doc-section {
+    padding-top: 16px;
+    padding-bottom: 16px; }
+    .doc-section .title-underline::before {
+      display: none; } }
+
+@media (max-width: 560px) {
+  .doc-section .section__inner {
+    position: relative;
+    z-index: 1; }
+    .doc-section .section__inner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -32px;
+      width: calc(100% + 32px);
+      height: 100%;
+      border: 1px solid var(--gray100);
+      border-radius: 2px;
+      z-index: -1; } }
+
+.doc-section__triangle {
+  display: none;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms; }
+  @media (max-width: 560px) {
+    .doc-section__triangle {
+      display: initial; } }
+
+@media (max-width: 560px) {
+  .doc-section__title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 0 !important;
+    padding-right: 40px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    min-height: 116px; } }
+
+.doc-section.open .doc-section__triangle {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg); }

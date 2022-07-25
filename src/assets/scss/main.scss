@@ -333,7 +333,9 @@ main{
 	}
 }
 
-
+.t-italic{
+	font-style: italic;
+}
 .text, .text-sm, .text-md, .h1, .h2, .h3, .h5{
 	max-width: 1080px;
 }
@@ -556,9 +558,7 @@ main{
 
     
 }
-.prop-media-55{
-	width: 100%;
-}
+
 
 .mobile-full-width{
 	@media (max-width: 768px){
@@ -566,6 +566,70 @@ main{
 		margin-left: -20px !important;
 	}
 }
+
+.desktop-full-height{
+	@media (min-width: 769px){
+		height: 100%;
+
+		div{
+			padding-bottom: 0 !important;
+			height: 100% !important;
+			position: static !important;
+		}
+
+		img, video, iframe{
+			position: static !important;
+		}
+	}
+}
+
+
+
+.prop-media-77{
+	
+	width: 100%;
+}
+
+
+.prop-media-77__inner{
+	width: 100%;
+	padding-bottom: 77.77%;
+	
+	position: relative;
+	img, video{
+		 position: absolute;
+		 width: 100%;
+		 max-width: 100%;
+		 height: 100%;
+		 object-fit: cover;
+		 object-position: center;
+	}
+
+	iframe{
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.prop-media-77__content{
+	position: absolute;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+
+
+
+
+.prop-media-55{
+	width: 100%;
+}
+
 .prop-media-55__inner{
 	width: 100%;
 	padding-bottom: 55.384615384%;
@@ -585,6 +649,7 @@ main{
 		height: 100%;
 	}
 }
+
 
 .prop-media-39{
 	
@@ -749,17 +814,35 @@ main{
 	.brand{
 		color: $sany100;
 	}
+
+	.cert__icon-layer:hover{
+		path{
+			fill: $sany100;
+		}
+	}
 }
 
 .mammut{
 	.brand{
 		color: $mammut100;
 	}
+
+	.cert__icon-layer:hover{
+		path{
+			fill: $mammut100;
+		}
+	}
 }
 
 .socma{
 	.brand{
 		color: $socma100;
+	}
+
+	.cert__icon-layer:hover{
+		path{
+			fill: $socma100;
+		}
 	}
 }
 
@@ -796,3 +879,4 @@ main{
 @import 'units/page/brands/brands';
 @import 'units/page/mounted-equipment/mounted-equipment';
 
+@import 'units/page/about-us/about-us';
