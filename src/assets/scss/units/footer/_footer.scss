@@ -9,7 +9,16 @@
     @media (max-width: 1280px){
         padding: 56px 20px;
     }
+
+    margin-top: 80px;
+
+    @media (max-width: 1280px){
+        margin-top: 48px;
+    }
 }
+
+
+
 
 .footer__inner{
     display: flex;

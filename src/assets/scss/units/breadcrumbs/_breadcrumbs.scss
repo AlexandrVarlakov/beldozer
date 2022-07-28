@@ -2,8 +2,11 @@
     padding: 80px 30px 32px;
     @media (max-width: 1280px){
     
-      padding: 40px 20px 32px;
+      padding: 40px 20px 8px;
     }
+
+    
+
     a{
         font-weight: 300;
         font-size: 14px;
@@ -33,5 +36,11 @@
                 color:  #54555F;
             }
         }
+    }
+}
+
+.breadcrumbs.section + section{
+    @media (max-width: 1280px){
+        padding-top: 24px;
     }
 }

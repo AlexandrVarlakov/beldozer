@@ -113,7 +113,12 @@ ul{
 	max-width: 1300px;
 }
 
-
+.section.beldozer-desc-section{
+	padding-bottom: 0;
+	@media (max-width: 1280px){
+		padding-bottom: 8px;
+	}
+}
 .page-content{
 	overflow: hidden;
 	display: flex;
@@ -428,9 +433,36 @@ mark{
 		 width: 100vw;
 		 height: 1px;
 		 background-color: $gray100;
+
+		@media (max-width: 1024px){
+			bottom: -8px;
+		}
 	}
 }
+.tu-sublock{
+	display: block;
+	@media (max-width: 1024px){
+		display: inline-block;
+	}
+	&::before{
+		content: "";
+		position: absolute;
+		bottom: -16px;
+		transform: translate(-17.74193%, 0);
+		right: 0;
+		width: 100%;
+		max-width: 620px;
+		height: 1px;
+		background-color: $gray100;
 
+	   @media (max-width: 1024px){
+		   bottom: -8px;
+		   max-width: initial;
+		   width: 100vw;
+		   transform: translate(60px, 0);
+	   }
+   }
+}
 
 .btn{
 	font-family: 'Mulish';
@@ -942,6 +974,11 @@ mark{
 	}
 }
 
+.catalog {
+	.catalog__list{
+		margin-top: 0;
+	}
+}
 
 
 @import 'units/grid/g-container';

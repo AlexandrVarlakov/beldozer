@@ -8,20 +8,6 @@
 
 @font-face {
   font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-BlackItalic.eot");
-  src: local("Mulish Black Italic"), local("Mulish-BlackItalic"), url("../fonts/Mulish/Mulish-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-BlackItalic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-BlackItalic.woff") format("woff"), url("../fonts/Mulish/Mulish-BlackItalic.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-ExtraBoldItalic.eot");
-  src: local("Mulish ExtraBold Italic"), local("Mulish-ExtraBoldItalic"), url("../fonts/Mulish/Mulish-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-ExtraBoldItalic.woff") format("woff"), url("../fonts/Mulish/Mulish-ExtraBoldItalic.ttf") format("truetype");
-  font-weight: 800;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Mulish';
   src: url("../fonts/Mulish/Mulish-MediumItalic.eot");
   src: local("Mulish Medium Italic"), local("Mulish-MediumItalic"), url("../fonts/Mulish/Mulish-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-MediumItalic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-MediumItalic.woff") format("woff"), url("../fonts/Mulish/Mulish-MediumItalic.ttf") format("truetype");
   font-weight: 500;
@@ -36,31 +22,10 @@
 
 @font-face {
   font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-SemiBoldItalic.eot");
-  src: local("Mulish SemiBold Italic"), local("Mulish-SemiBoldItalic"), url("../fonts/Mulish/Mulish-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-SemiBoldItalic.woff") format("woff"), url("../fonts/Mulish/Mulish-SemiBoldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-BoldItalic.eot");
-  src: local("Mulish Bold Italic"), local("Mulish-BoldItalic"), url("../fonts/Mulish/Mulish-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-BoldItalic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-BoldItalic.woff") format("woff"), url("../fonts/Mulish/Mulish-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Mulish';
   src: url("../fonts/Mulish/Mulish-ExtraBold.eot");
   src: local("Mulish ExtraBold"), local("Mulish-ExtraBold"), url("../fonts/Mulish/Mulish-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-ExtraBold.woff2") format("woff2"), url("../fonts/Mulish/Mulish-ExtraBold.woff") format("woff"), url("../fonts/Mulish/Mulish-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal; }
-
-@font-face {
-  font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-LightItalic.eot");
-  src: local("Mulish Light Italic"), local("Mulish-LightItalic"), url("../fonts/Mulish/Mulish-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-LightItalic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-LightItalic.woff") format("woff"), url("../fonts/Mulish/Mulish-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic; }
 
 @font-face {
   font-family: 'Mulish';
@@ -78,31 +43,10 @@
 
 @font-face {
   font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-ExtraLightItalic.eot");
-  src: local("Mulish ExtraLight Italic"), local("Mulish-ExtraLightItalic"), url("../fonts/Mulish/Mulish-ExtraLightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-ExtraLightItalic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-ExtraLightItalic.woff") format("woff"), url("../fonts/Mulish/Mulish-ExtraLightItalic.ttf") format("truetype");
-  font-weight: 200;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Mulish';
   src: url("../fonts/Mulish/Mulish-Regular.eot");
   src: local("Mulish Regular"), local("Mulish-Regular"), url("../fonts/Mulish/Mulish-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-Regular.woff2") format("woff2"), url("../fonts/Mulish/Mulish-Regular.woff") format("woff"), url("../fonts/Mulish/Mulish-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
-
-@font-face {
-  font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-ExtraLight.eot");
-  src: local("Mulish ExtraLight"), local("Mulish-ExtraLight"), url("../fonts/Mulish/Mulish-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-ExtraLight.woff2") format("woff2"), url("../fonts/Mulish/Mulish-ExtraLight.woff") format("woff"), url("../fonts/Mulish/Mulish-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Mulish';
-  src: url("../fonts/Mulish/Mulish-Italic.eot");
-  src: local("Mulish Italic"), local("Mulish-Italic"), url("../fonts/Mulish/Mulish-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Mulish/Mulish-Italic.woff2") format("woff2"), url("../fonts/Mulish/Mulish-Italic.woff") format("woff"), url("../fonts/Mulish/Mulish-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic; }
 
 @font-face {
   font-family: 'Mulish';
@@ -113,44 +57,9 @@
 
 @font-face {
   font-family: 'Oswald';
-  src: url("../fonts/Oswald/Oswald-ExtraLight.eot");
-  src: local("Oswald ExtraLight"), local("Oswald-ExtraLight"), url("../fonts/Oswald/Oswald-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald/Oswald-ExtraLight.woff2") format("woff2"), url("../fonts/Oswald/Oswald-ExtraLight.woff") format("woff"), url("../fonts/Oswald/Oswald-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Oswald';
-  src: url("../fonts/Oswald/Oswald-Light.eot");
-  src: local("Oswald Light"), local("Oswald-Light"), url("../fonts/Oswald/Oswald-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald/Oswald-Light.woff2") format("woff2"), url("../fonts/Oswald/Oswald-Light.woff") format("woff"), url("../fonts/Oswald/Oswald-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Oswald';
-  src: url("../fonts/Oswald/Oswald-Medium.eot");
-  src: local("Oswald Medium"), local("Oswald-Medium"), url("../fonts/Oswald/Oswald-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald/Oswald-Medium.woff2") format("woff2"), url("../fonts/Oswald/Oswald-Medium.woff") format("woff"), url("../fonts/Oswald/Oswald-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Oswald';
   src: url("../fonts/Oswald/Oswald-Bold.eot");
   src: local("Oswald Bold"), local("Oswald-Bold"), url("../fonts/Oswald/Oswald-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald/Oswald-Bold.woff2") format("woff2"), url("../fonts/Oswald/Oswald-Bold.woff") format("woff"), url("../fonts/Oswald/Oswald-Bold.ttf") format("truetype");
   font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Oswald';
-  src: url("../fonts/Oswald/Oswald-Regular.eot");
-  src: local("Oswald Regular"), local("Oswald-Regular"), url("../fonts/Oswald/Oswald-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald/Oswald-Regular.woff2") format("woff2"), url("../fonts/Oswald/Oswald-Regular.woff") format("woff"), url("../fonts/Oswald/Oswald-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Oswald';
-  src: url("../fonts/Oswald/Oswald-SemiBold.eot");
-  src: local("Oswald SemiBold"), local("Oswald-SemiBold"), url("../fonts/Oswald/Oswald-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald/Oswald-SemiBold.woff2") format("woff2"), url("../fonts/Oswald/Oswald-SemiBold.woff") format("woff"), url("../fonts/Oswald/Oswald-SemiBold.ttf") format("truetype");
-  font-weight: 600;
   font-style: normal; }
 
 :root {
@@ -231,6 +140,12 @@ ul {
 .section__inner {
   width: 100%;
   max-width: 1300px; }
+
+.section.beldozer-desc-section {
+  padding-bottom: 0; }
+  @media (max-width: 1280px) {
+    .section.beldozer-desc-section {
+      padding-bottom: 8px; } }
 
 .page-content {
   overflow: hidden;
@@ -485,6 +400,35 @@ mark {
     width: 100vw;
     height: 1px;
     background-color: var(--gray100); }
+    @media (max-width: 1024px) {
+      .title-underline::before {
+        bottom: -8px; } }
+
+.tu-sublock {
+  display: block; }
+  @media (max-width: 1024px) {
+    .tu-sublock {
+      display: inline-block; } }
+  .tu-sublock::before {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    -webkit-transform: translate(-17.74193%, 0);
+        -ms-transform: translate(-17.74193%, 0);
+            transform: translate(-17.74193%, 0);
+    right: 0;
+    width: 100%;
+    max-width: 620px;
+    height: 1px;
+    background-color: var(--gray100); }
+    @media (max-width: 1024px) {
+      .tu-sublock::before {
+        bottom: -8px;
+        max-width: initial;
+        width: 100vw;
+        -webkit-transform: translate(60px, 0);
+            -ms-transform: translate(60px, 0);
+                transform: translate(60px, 0); } }
 
 .btn {
   font-family: 'Mulish';
@@ -917,6 +861,9 @@ mark {
     width: 100%;
     max-width: 100%;
     mix-blend-mode: multiply; }
+
+.catalog .catalog__list {
+  margin-top: 0; }
 
 .g-container {
   display: grid;
@@ -2029,10 +1976,14 @@ a.current {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 56px 30px; }
+  padding: 56px 30px;
+  margin-top: 80px; }
   @media (max-width: 1280px) {
     .footer {
       padding: 56px 20px; } }
+  @media (max-width: 1280px) {
+    .footer {
+      margin-top: 48px; } }
 
 .footer__inner {
   display: -webkit-box;
@@ -3028,6 +2979,7 @@ modal-container {
   -o-transition: 300ms;
   transition: 300ms;
   cursor: pointer;
+  border: 1px solid var(--gray100);
   max-width: 360px;
   position: relative; }
   .catalog-card:hover {
@@ -3430,6 +3382,9 @@ modal-container {
 
 .mb-20 {
   margin-bottom: 9.5rem; }
+
+.mt-0 {
+  margin-top: 0; }
 
 .p-x-0 {
   padding-left: 0 !important;
@@ -4039,7 +3994,7 @@ modal-container {
   padding: 80px 30px 32px; }
   @media (max-width: 1280px) {
     .breadcrumbs {
-      padding: 40px 20px 32px; } }
+      padding: 40px 20px 8px; } }
   .breadcrumbs a {
     font-weight: 300;
     font-size: 14px;
@@ -4059,6 +4014,10 @@ modal-container {
       display: none; }
     .breadcrumbs a:last-of-type:hover {
       color: #54555F; }
+
+@media (max-width: 1280px) {
+  .breadcrumbs.section + section {
+    padding-top: 24px; } }
 
 .f-company-logotype {
   padding: 29px 42px;
@@ -4668,6 +4627,8 @@ modal-container {
   position: relative;
   grid-column: 2 / 3;
   grid-row: 1 / -1; }
+  .product-description__img-block img {
+    max-width: 100%; }
   @media (max-width: 768px) {
     .product-description__img-block {
       padding-bottom: 0%;
@@ -4964,7 +4925,8 @@ modal-container {
   color: #54555F; }
   @media (max-width: 1024px) {
     .accordion__table {
-      font-size: 17px; } }
+      font-size: 17px;
+      width: auto; } }
   .accordion__table tr:nth-of-type(even) {
     background-color: var(--gray100); }
   .accordion__table td:nth-of-type(1) {
@@ -4972,35 +4934,41 @@ modal-container {
     padding-left: 24px; }
     @media (max-width: 768px) {
       .accordion__table td:nth-of-type(1) {
-        width: 20%; } }
+        width: 20%;
+        padding: 8px 4px 8px 24px;
+        min-width: 183px; } }
   .accordion__table td:nth-of-type(2) {
     width: auto;
     padding: 16px 12px;
     text-align: center; }
     @media (max-width: 768px) {
       .accordion__table td:nth-of-type(2) {
-        width: 20%; } }
+        width: 20%;
+        padding: 16px 12px; } }
   .accordion__table td:nth-of-type(3) {
     width: auto;
     padding: 16px 12px;
     text-align: center; }
     @media (max-width: 768px) {
       .accordion__table td:nth-of-type(3) {
-        width: 20%; } }
+        width: 20%;
+        padding: 16px 12px; } }
   .accordion__table td:nth-of-type(4) {
     width: auto;
     padding: 16px 12px;
     text-align: center; }
     @media (max-width: 768px) {
       .accordion__table td:nth-of-type(4) {
-        width: 20%; } }
+        width: 20%;
+        padding: 16px 12px; } }
   .accordion__table td:nth-of-type(5) {
     width: auto;
     padding: 16px 12px;
     text-align: center; }
     @media (max-width: 768px) {
       .accordion__table td:nth-of-type(5) {
-        width: 20%; } }
+        width: 20%;
+        padding: 16px 24px 16px 12px; } }
 
 .accordion__header {
   max-width: 530px;
@@ -5067,7 +5035,7 @@ modal-container {
   border-radius: 2px; }
 
 .acc-content__inner {
-  padding: 72px 24px 8px; }
+  padding: 72px 24px 32px; }
 
 .accordion.open .accordion__header {
   background-color: var(--beldozer80);
