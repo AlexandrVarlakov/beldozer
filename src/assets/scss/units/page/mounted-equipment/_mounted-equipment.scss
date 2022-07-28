@@ -1,12 +1,21 @@
 .me-description{
-
+    mix-blend-mode: multiply;
 }
 
 .me-description__img{
     justify-self: center;
     img{
         max-width: 100%;
-        mix-blend-mode: multiply;
+        
+    }
+}
+
+.translateY--10{
+    
+    transform: translateY(-10%);
+
+    @media (max-width: 1024px){
+        transform: translateY(-5%);
     }
 }
 

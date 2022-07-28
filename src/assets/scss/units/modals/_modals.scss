@@ -44,3 +44,14 @@
         font-size: 14px;
     }
 }
+
+
+.debug-modal{
+    display: none;
+
+    max-width: calc(100% - 40px);
+    background-color: #fff;
+    width: 640px;
+    
+    padding: 32px 64px ;
+}

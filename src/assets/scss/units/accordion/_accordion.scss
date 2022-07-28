@@ -1,0 +1,250 @@
+.accordion{
+    .catalog__list{
+        margin-top: 0;
+    }
+
+    &:not(:first-of-type){
+        margin-top: 16px;
+    }
+
+
+    display: block;
+    min-height: 72px;
+    max-width: 1024px;
+}
+.accordion.table-content{
+    max-width: 1186px;
+
+    .acc-content__inner{
+        padding: 0;
+    }
+
+    .accordion__body{
+        margin-top: -56px;
+
+        @media (max-width: 1280px){
+            margin-top: 0px;
+        }
+    }
+
+    .acc-content__inner{
+        overflow: auto;
+    }
+}
+
+.accordion__table{
+    
+    width: 1180px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 135%;
+    border-radius: 2px;
+    border-collapse: collapse;
+    color: #54555F;
+
+    @media (max-width: 1024px){
+        font-size: 17px;
+    }
+    tr{
+        &:nth-of-type(even){
+            background-color: $gray100;
+        }
+    }
+    td{
+        
+        &:nth-of-type(1){
+            width: 50%;
+            padding-left: 24px;
+
+            @media (max-width: 768px){
+                width: 20%;
+            }
+            
+        }
+        &:nth-of-type(2){
+            width: auto;
+            padding: 16px 12px;
+            text-align: center;
+
+            @media (max-width: 768px){
+                width: 20%;
+            }
+        }
+        &:nth-of-type(3){
+            width: auto;
+            padding: 16px 12px;
+            text-align: center;
+
+            @media (max-width: 768px){
+                width: 20%;
+            }
+        }
+        &:nth-of-type(4){
+            width: auto;
+            padding: 16px 12px;
+            text-align: center;
+
+            @media (max-width: 768px){
+                width: 20%;
+            }
+        }
+        &:nth-of-type(5){
+            width: auto;
+            padding: 16px 12px;
+            text-align: center;
+
+            @media (max-width: 768px){
+                width: 20%;
+            }
+        }
+    }
+}
+
+
+
+.accordion__header{
+    max-width: 530px;
+    overflow: hidden;
+
+    border: 1px solid $black80;
+    border-radius: 2px;
+    min-height: 72px;
+    padding: 16px 24px;
+    position: relative;
+    background-color: $white100;
+
+
+    transition: 300ms;
+
+    display: flex;
+    align-items: center;
+
+
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 135%;
+    color: #35363D;
+
+    @media (max-width: 1024px){
+		font-size: 17px;
+	}
+
+    @media (max-width: 768px){
+		padding: 24px;
+	}
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        transition: 300ms;
+        transform: translate(-100%, -100%);
+        background-color: $beldozer100;
+    }
+
+    &:hover{
+        &::before{
+            transform: translate(-50%, -50%);
+        }
+        
+    }
+}
+
+.accordion__body{
+    
+    
+    background-color: $white100;
+    margin-top: -48px;
+    overflow: hidden;
+    height: 0;
+    transition: 300ms;
+}
+
+.acc-content{
+    border: 1px solid $gray100;
+    border-radius: 2px;
+}
+
+
+.acc-content__inner{
+    padding: 72px 24px 8px;
+}
+
+.accordion.open{
+
+    .accordion__header{
+        background-color: $beldozer80;
+        border-color: $beldozer80;
+    }
+
+    .accordion__header{
+        &::before{
+            transform: translate(-100%, -100%);
+        }
+    }
+
+}
+
+.sany{
+    .accordion__header{
+        &::before{
+            background-color: $sany100;
+        }
+    }
+
+    .accordion.open{
+
+        .accordion__header{
+            background-color: $sany80;
+            border-color: $sany80;
+        }
+    
+    
+    }
+}
+
+.mammut{
+    .accordion__header{
+        &::before{
+            background-color: $mammut100;
+        }
+    }
+
+    .accordion.open{
+
+        .accordion__header{
+            background-color: $mammut80;
+
+            border-color: $mammut80;
+        }
+    
+    
+    }
+}
+
+.socma{
+    .accordion__header{
+        &::before{
+            background-color: $socma100;           
+        }
+    }
+
+    .accordion.open{
+
+        .accordion__header{
+            background-color: $socma80;
+            border-color: $socma80;
+            color: $white80;
+        }
+    
+    
+    }
+}

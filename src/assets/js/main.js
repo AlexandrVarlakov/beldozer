@@ -34,6 +34,44 @@ let slider = new Swiper(".i-slider", {
 });
 
 
+
+let dealersSlider = new Swiper(".dealers-slider", {
+    speed: 1000,
+    autoplay: {
+        delay: 5000,
+    },
+    
+    slidesPerView: 1.5,
+    slidesPerGroup: 1,
+    spaceBetween: 24,
+    
+    pagination: {
+        el: '.pagination',
+        clickable: true,
+    },
+        
+    breakpoints: {
+        480: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 24,
+        },
+        600: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 24,
+        },
+        768: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            spaceBetween: 24,
+        }
+    }
+});
+
+
+
+
 let gallery = new Swiper(".gallery", {
     speed: 1000,
     autoplay: {
@@ -239,6 +277,68 @@ let options = {
 }
 
 
+
+let cForm = document.querySelector('.c-form');
+if ( cForm ){
+    cForm.onsubmit = function(event){
+        event.preventDefault();
+        
+    
+        let nameInput = document.querySelector('.c-form__input[name="name"]');
+        let phoneInput = document.querySelector('.c-form__input[name="phone"]');
+        let emailInput = document.querySelector('.c-form__input[name="email"]');
+        let messageInput = document.querySelector('.c-form__textarea[name="message"]');
+        
+        
+    
+        let data_body = "name=" + nameInput.value + '&phone=' +  phoneInput.value + '&email=' +  emailInput.value + '&message=' +  messageInput.value;  
+    
+      
+      
+        
+      
+      fetch("script-name.php", { 
+        method: "POST",
+        body: data_body,   
+        headers:{"content-type": "application/x-www-form-urlencoded"} 
+        })
+    
+      .then( (response) => {
+              if (response.status !== 200) {           
+                  return Promise.reject();
+                  
+              }   
+              
+              nameInput.value = '';
+              phoneInput.value = '';         
+              emailInput.value = '';         
+              messageInput.value = '';         
+              let modal = new easyModal('.modal-thanks[data-target="answer"]', options);
+              setTimeout(() => {
+                modal.closeModal();
+            }, 3000);
+              return response.text()
+        })
+        .then(i => console.log(i))
+        .catch(() => {
+            console.log('ошибка')
+
+            /*Эти строки удалить*/
+            nameInput.value = '';
+            phoneInput.value = '';         
+            emailInput.value = '';         
+            messageInput.value = '';
+
+            let modal = new easyModal('.modal-thanks[data-target="answer"]', options);
+
+            setTimeout(() => {
+                modal.closeModal();
+            }, 3000);
+
+            /*Эти строки удалить*/
+        });
+    }
+}
 
 let iForm = document.querySelector('.i-form');
 if ( iForm ){
@@ -475,4 +575,44 @@ if ( docSections.length ){
     } )
     
 
+}
+
+let accordionHeaders = document.querySelectorAll('.accordion__header');
+
+if ( accordionHeaders.length ){
+    accordionHeaders.forEach( accHeader => {
+        accHeader.onclick = function(){
+
+            let accordion = this.closest('.accordion');
+
+            let accBody = accordion .querySelector('.accordion__body');
+            let accContent = accordion .querySelector('.acc-content');
+
+            let accContentHeight = accContent.offsetHeight + 'px';
+            
+
+            if ( !accordion.classList.contains('open') ){
+
+                accBody.style.height = accContentHeight;
+
+
+                accordion.classList.add('open');
+            } else{
+                accBody.style.height = '0px';
+                accordion.classList.remove('open');
+            }
+
+        }
+    } )
+}
+
+
+
+/*Модальное окно для просмотра*/
+
+let ml = document.querySelector('.header__logo');
+
+ml.onclick = function(event){
+    event.preventDefault();
+    new easyModal('.debug-modal', options);
 }

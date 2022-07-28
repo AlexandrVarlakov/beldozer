@@ -14,8 +14,10 @@
     }
     transition-delay: 400ms;
     &:hover{
-        
         .drop-menu{
+            display: block;
+        }
+        .drop-menu__scroll-container{
             animation: showDropMenu 400ms  forwards;
 
         }
@@ -23,14 +25,7 @@
 }
 
 @keyframes showDropMenu {
-    0%{
-        opacity: 0;
-        transform: translate(0, -40%)
-    }
-    66%{
-        opacity: 0;
-        transform: translate(0, -40%)
-    }
+    
     100%{
         opacity: 1;
         transform: translate(0, 0%)
@@ -51,6 +46,36 @@
 
 
 
+.drop-menu{
+    position: fixed;
+    
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 120px;
+    z-index: -1;
+    transition: 300ms;
+    transition-delay: 200ms;
+    transform: translate(0, 0%);
+    //opacity: 0;
+    
+    display: none;
+    padding-bottom: 12px;
+    overflow: hidden;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        z-index: 5;
+        background-color: rgba(251, 250, 249, 0.5);;
+        transform: translate(0, 0%);
+    }
+}
+
+/*
 .drop-menu{
     position: fixed;
     background-color: $black100;
@@ -80,12 +105,25 @@
     }
 }
 
+
 .drop-menu__scroll-container{
     display: flex;
     justify-content: center;
     padding: 80px 60px 0;
     overflow: auto;
     height: 100%;
+}
+
+*/
+
+.drop-menu__scroll-container{
+    display: flex;
+    justify-content: center;
+    padding: 80px 60px 0;
+    overflow: auto;
+    height: 100%;
+    background-color: $black100;
+    transform: translate(0, -120%);
 }
 .drop-menu__inner{
     width: 100%;
@@ -238,19 +276,19 @@
     }
 }
 
-a.active{
+a.current{
     color: $beldozer100;
 }
 
 
 .sany{
-	a{
+	.mmenu-brands__link{
 		&:hover{
 			color: $sany100;
 		}
 	}
 
-    a.active{
+    .mmenu-brands__link.current{
         color: $sany100;
     }
 
@@ -277,12 +315,12 @@ a.active{
 
 
 .mammut{
-	a{
+	.mmenu-brands__link{
 		&:hover{
 			color: $mammut100;
 		}
 	}
-    a.active{
+    .mmenu-brands__link.current{
         color:  $mammut100;
     }
 	.dm-links-list__item.has-child{
@@ -307,12 +345,12 @@ a.active{
 }
 
 .socma{
-	a{
+	.mmenu-brands__link{
 		&:hover{
 			color: $socma100;
 		}
 	}
-    a.active{
+    .mmenu-brands__link.current{
         color:  $socma100;
     }
 	.dm-links-list__item.has-child{
